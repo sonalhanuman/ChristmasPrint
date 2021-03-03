@@ -1,42 +1,50 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class ChristmasGenerationTest {
 
     @Test
-    public void treeList1layer() {
+    public void generateTreeWith1ShouldReturnErrorMessage() {
         ChristmasGeneration christmasGeneration = new ChristmasGeneration();
         assertEquals("The tree must have more than one layer", christmasGeneration.generateTree(1));
     }
 
     @Test
-    public void treeList2layer() {
+    public void generateTreeWith2ShouldReturnTreeWithTwoLayers() {
         ChristmasGeneration christmasGeneration = new ChristmasGeneration();
-        assertEquals("><", christmasGeneration.generateTree(2));
+        ArrayList<String> twoLayerList = new ArrayList<>();
+        twoLayerList.add("><");
+        twoLayerList.add("**");
+
+        var actualTree = christmasGeneration.generateTree(2);
+
+        assertEquals(twoLayerList, actualTree);
     }
 
     @Test
-    public void treeList4layer() {
+    public void generateTreeWith4ShouldReturnTreeWithFourLayers() {
         ChristmasGeneration christmasGeneration = new ChristmasGeneration();
-        assertEquals("><", christmasGeneration.generateTree(4));
+//         assertEquals("><", christmasGeneration.generateTree(4));
     }
 
     @Test
-    public void treeList6layer() {
+    public void generateTreeWith6ShouldReturnTreeWithSixLayers() {
         ChristmasGeneration christmasGeneration = new ChristmasGeneration();
-        assertEquals("><", christmasGeneration.generateTree(6));
+//         assertEquals("><", christmasGeneration.generateTree(6));
     }
 
     @Test
-    public void treeList10layer() {
+    public void generateTreeWith10ShouldReturnTreeWithTenLayers() {
         ChristmasGeneration christmasGeneration = new ChristmasGeneration();
-        assertEquals("><", christmasGeneration.generateTree(10));
+//         assertEquals("><", christmasGeneration.generateTree(10));
     }
 
     @Test
     public void treeList30layer() {
         ChristmasGeneration christmasGeneration = new ChristmasGeneration();
-        assertEquals("><", christmasGeneration.generateTree(30));
+//         assertEquals("><", christmasGeneration.generateTree(30));
     }
 }
